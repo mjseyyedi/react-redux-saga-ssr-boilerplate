@@ -1,15 +1,35 @@
-import React, {useState} from 'react'
+import React from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import {createStructuredSelector} from 'reselect'
 
-import styles from './styles'
-import './style'
+import reducer from 'Redux/reducers/Home/reducer'
+import saga from 'Redux/reducers/Home/saga'
 
-const Home = () => {
+import {setHomeData} from 'Redux/reducers/Home/actions'
+import {selectHomeData} from 'Redux/reducers/Home/selectors'
 
-  return (
-    <div className={styles.container}>
+import useRedux from 'Hooks/useRedux'
 
-    </div>
-  )
+import View from './View'
+
+const HomePageIndex = (initialProps) => {
+  const reducers = {home: reducer}
+  const sagas = {home: saga}
+  const dispatch = useDispatch()
+
+  useRedux(reducers,sagas)
+
+  const mapDispatchToProps = {
+    setHomeData : data => dispatch(setHomeData(data))
+  }
+
+  const mapStateToProps = useSelector(createStructuredSelector({
+    homeData : selectHomeData()
+  }))
+
+  const props = Object.assign({}, initialProps, mapDispatchToProps, mapStateToProps)
+
+  return <View {...props} />
 }
 
-export default Home
+export default HomePageIndex

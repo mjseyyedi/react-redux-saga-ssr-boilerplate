@@ -1,24 +1,16 @@
-import React, {useEffect} from 'react'
-import {useLocation} from 'react-router-dom'
-import {renderRoutes} from 'react-router-config'
-import {useSelector, useDispatch} from 'react-redux'
+import React, {createContext, useEffect, useState} from 'react'
 
-import 'components/theme'
-import {getBranch} from 'router/Routes'
-import {setRouterMatch} from 'Redux/reducers/global/actions'
+import initialStates from './states'
 
-import styles from './styles'
+export const GlobalContext = createContext()
+export const states = initialStates;
 
-const Providers = ({route}) => {
-  const dispatch = useDispatch()
-  const location = useLocation()
-  const match = getBranch(location.pathname).match
+const Context = ({children, contextStates}) => {
 
-  useEffect(() => {
-    dispatch(setRouterMatch(match))
-  }, [location.pathname])
-
-  return renderRoutes(route.routes)
+  return <GlobalContext.Provider value={{...contextStates}}>
+    {children}
+  </GlobalContext.Provider>
 }
 
-export default Providers
+
+export default Context

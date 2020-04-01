@@ -1,43 +1,17 @@
 import {createSelector} from 'reselect'
 
-const selectGlobal = state =>
-  state.global
+const selectHome = state =>
+  state.home
 
-const selectPageTitle = () =>
-  createSelector(
-    selectGlobal,
-    global =>
-      global.pageTitle,
-  )
 
-const selectRouterMatch = () =>
+const selectHomeData = () =>
   createSelector(
-    selectGlobal,
-    global =>
-      global.routerMatch,
-  )
-
-const selectRouterPath = () =>
-  createSelector(
-    selectGlobal,
-    global =>
-      global
-        .routerMatch
-        .path,
-  )
-
-const selectRouterUrl = () =>
-  createSelector(
-    selectGlobal,
-    global =>
-      global
-        .routerMatch
-        .url,
+    selectHome,
+    home =>
+      home
+        .homeData
   )
 
 export {
-  selectPageTitle,
-  selectRouterMatch,
-  selectRouterPath,
-  selectRouterUrl,
+  selectHomeData,
 }

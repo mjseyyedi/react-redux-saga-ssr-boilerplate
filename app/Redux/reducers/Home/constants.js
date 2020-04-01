@@ -1,6 +1,5 @@
-const withPrefix = action => `GLOBAL/${action}`
+const withPrefix = action => `HOME/${action}`
 
 export default {
-  SET_PAGE_TITLE: withPrefix('REDUCER/SET_PAGE_TITLE'),
-  SET_ROUTER_MATCH: withPrefix('REDUCER/SET_ROUTER_MATCH'),
+  SET_HOME_DATA: withPrefix('REDUCER/SET_HOME_DATA'),
 }
