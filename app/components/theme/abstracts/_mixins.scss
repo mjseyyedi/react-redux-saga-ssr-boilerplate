@@ -1,0 +1,80 @@
+@mixin border-radius($radius: $border-radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin line-height($text-size) {
+  line-height: $text-size + $additional-line-height;
+}
+
+@mixin transition(
+  $property: all,
+  $duration: $transition-duration,
+  $ease: $ease-out-quart
+) {
+  -webkit-transition: $property $duration $ease;
+  -moz-transition: $property $duration $ease;
+  -ms-transition: $property $duration $ease;
+  -o-transition: $property $duration $ease;
+  transition: $property $duration $ease;
+}
+
+@mixin box-shadow($value) {
+  -webkit-box-shadow: $value;
+  -moz-box-shadow: $value;
+  box-shadow: $value;
+}
+
+@mixin filter($value) {
+  -webkit-filter: $value;
+  filter: $value;
+}
+
+@mixin font-styles($fontSize, $fontWeight, $color) {
+  font-size: $fontSize !important;
+  font-weight: $fontWeight !important;
+  color: $color !important;
+  font-family: 'iransans' !important;
+}
+
+@mixin safari-render($transform, $perspective) {
+  transform: $transform;
+  -webkit-transform: $transform;
+  perspective: $perspective;
+  -webkit-perspective: $perspective;
+}
+
+@mixin linearGradientBuilder($start-color, $end-color, $orientation) {
+  background: $start-color;
+  @if $orientation == 'vertical' {
+    background: -webkit-linear-gradient(top, $start-color, $end-color);
+    background: linear-gradient(to bottom, $start-color, $end-color);
+  } @else if $orientation == 'horizontal' {
+    background: -webkit-linear-gradient(left, $start-color, $end-color);
+    background: linear-gradient(to right, $start-color, $end-color);
+  } @else {
+    background: -webkit-radial-gradient(
+      center,
+      ellipse cover,
+      $start-color,
+      $end-color
+    );
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}
+
+@mixin filterBuilder(
+  $invert,
+  $sepia,
+  $saturate,
+  $huerotate,
+  $brightness,
+  $contrast
+) {
+  -webkit-filter: invert($invert) sepia($sepia) saturate($saturate)
+    hue-rotate($huerotate) brightness($brightness) contrast($contrast);
+  filter: invert($invert) sepia($sepia) saturate($saturate)
+    hue-rotate($huerotate) brightness($brightness) contrast($contrast);
+}

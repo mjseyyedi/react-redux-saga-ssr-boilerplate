@@ -1,0 +1,37 @@
+{
+  "arrowParens": "avoid",
+  "bracketSpacing": false,
+  "htmlWhitespaceSensitivity": "css",
+  "insertPragma": false,
+  "jsxBracketSameLine": true,
+  "jsxSingleQuote": false,
+  "printWidth": 80,
+  "proseWrap": "preserve",
+  "quoteProps": "as-needed",
+  "requirePragma": false,
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": ["**/actions.js", "**/selectors.js"],
+      "options": {
+        "printWidth": 0
+      }
+    },
+    {
+      "files": "**/constants.js",
+      "options": {
+        "printWidth": 1000
+      }
+    },
+    {
+      "files": "**/utils/*.js",
+      "options": {
+        "printWidth": 20
+      }
+    }
+  ]
+}

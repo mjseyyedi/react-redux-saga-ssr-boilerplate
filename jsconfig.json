@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": "app",
+    "paths": {
+      "API/*": ["./API/*"],
+      "SDK/*": ["./SDK/*"],
+      "utils/*": ["./utils/*"],
+      "store/*": ["./redux/*"],
+      "root/*": ["./components/root/*"],
+      "pages/*": ["./components/pages/*"],
+      "hooks/*": ["./components/hooks/*"],
+      "reducers/*": ["./redux/reducers/*"],
+      "analyzer/*": ["./redux/analyzer/*"],
+      "common/*": ["./components/common/*"],
+      "features/*": ["./components/features/*"]
+    }
+  },
+  "include": ["app"]
+}

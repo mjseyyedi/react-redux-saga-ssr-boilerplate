@@ -1,0 +1,21 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  -webkit-overflow-scrolling: touch;
+  letter-spacing: 0;
+
+  ::-webkit-scrollbar {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+}
