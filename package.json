@@ -18,7 +18,7 @@
   "dependencies": {
     "@formatjs/intl-relativetimeformat": "^4.5.11",
     "@loadable/component": "^5.10.3",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "intl-pluralrules": "^1.1.2",
     "js-cookie": "^2.2.1",
     "lodash": "^4.17.15",
